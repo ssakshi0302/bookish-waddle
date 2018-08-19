@@ -1,0 +1,16 @@
+group 'PlayingWithDropwizard'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'application'
+
+sourceCompatibility = 1.8
+
+
+apply from: "$rootDir/gradle/dependencies.gradle"
+apply from: "$rootDir/gradle/distribution.gradle"
+
+run {
+    args 'server', "play.yml"
+    debug true
+}
+

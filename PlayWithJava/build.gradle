@@ -1,0 +1,22 @@
+group 'PlayWithJava'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+
+configurations {
+    annotationProcessors {
+        description = 'annotation Processors : custom pluggable types for Java'
+    }
+}
+dependencies {
+    annotationProcessors "org.projectlombok:lombok:1.16.10"
+    compile "org.projectlombok:lombok:1.16.10"
+    testCompile "org.testng:testng:6.9.10"
+}

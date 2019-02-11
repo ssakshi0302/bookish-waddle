@@ -40,7 +40,7 @@ public class BinaryTreeDiameterUtil {
     root.rightNode.rightNode.setData(9);
   }
 
-  public static int calculateHeight(BinaryTreeNode node, int height) {
+  private static int calculateHeight(BinaryTreeNode node, int height) {
     if (node == null) {
       return height;
     }
@@ -49,7 +49,7 @@ public class BinaryTreeDiameterUtil {
         calculateHeight(node.rightNode, height));
   }
 
-  public static int diameterOfATree(BinaryTreeNode node) {
+  private static int diameterOfATree(BinaryTreeNode node) {
     if (node == null) {
       return 0;
     }

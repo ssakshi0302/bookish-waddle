@@ -3,6 +3,8 @@ package com.play.java8;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.function.Consumer;
 
 public class ConsumerExample {
@@ -16,5 +18,5 @@ public class ConsumerExample {
     list.forEach(c1.andThen(c2));
     result.forEach(c1);
     c2.accept(result.get(0));
-  }
+   }
 }

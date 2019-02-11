@@ -18,4 +18,12 @@ public class BinaryTreeNode {
 
   public BinaryTreeNode() {
   }
+
+  public void inOrderTraversal(final BinaryTreeNode node) {
+    if (node != null) {
+      inOrderTraversal(node.leftNode);
+      System.out.print(node.data + " ");
+      inOrderTraversal(node.rightNode);
+    }
+  }
 }

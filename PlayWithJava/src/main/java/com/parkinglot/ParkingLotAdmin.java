@@ -6,9 +6,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
-import lombok.Getter;
-
-@Getter
 public class ParkingLotAdmin {
 
   private ParkingLot parkingLot;
@@ -79,4 +76,9 @@ public class ParkingLotAdmin {
     parkingLot.setParkingSlotList(parkingSlotList);
   }
 
+  public ParkingLot getParkingLot() {return this.parkingLot;}
+
+  public ParkingService getParkingService() {return this.parkingService;}
+
+  public ParkingLotQueryService getQueryService() {return this.queryService;}
 }

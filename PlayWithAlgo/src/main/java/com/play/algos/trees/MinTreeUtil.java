@@ -13,31 +13,31 @@ public class MinTreeUtil {
     if (root == null) {
       return Integer.MAX_VALUE;
     }
-    return Math.min(Math.min(root.data, findMin(root.leftNode)), Math.min(root.data, findMin(root.rightNode)));
+    return Math.min(Math.min(root.data, findMin(root.left)), Math.min(root.data, findMin(root.right)));
   }
 
   private static void createSampleTree() {
     root = new BinaryTreeNode(5);
-    root.setLeftNode(new BinaryTreeNode(3));
-    root.leftNode.setLeftNode(new BinaryTreeNode(4));
-    root.leftNode.leftNode.setLeftNode(new BinaryTreeNode(5));
-    root.leftNode.leftNode.leftNode.setLeftNode(new BinaryTreeNode(10));
-    root.leftNode.leftNode.leftNode.setRightNode(new BinaryTreeNode(3));
-    root.leftNode.leftNode.leftNode.rightNode.setLeftNode(new BinaryTreeNode(2));
-    root.leftNode.leftNode.setRightNode(new BinaryTreeNode(2));
-    root.leftNode.leftNode.rightNode.setLeftNode(new BinaryTreeNode(6));
-    root.leftNode.leftNode.rightNode.setRightNode(new BinaryTreeNode(3));
-    root.leftNode.setRightNode(new BinaryTreeNode(7));
-    root.setRightNode(new BinaryTreeNode(5));
-    root.rightNode.setLeftNode(new BinaryTreeNode(3));
-    root.rightNode.setRightNode(new BinaryTreeNode(2));
-    root.rightNode.leftNode.setLeftNode(new BinaryTreeNode(4));
-    root.rightNode.leftNode.setRightNode(new BinaryTreeNode(6));
-    root.rightNode.rightNode.setLeftNode(new BinaryTreeNode(8));
-    root.rightNode.rightNode.setRightNode(new BinaryTreeNode(5));
-    root.rightNode.rightNode.rightNode.setRightNode(new BinaryTreeNode(2));
-    root.rightNode.rightNode.rightNode.setLeftNode(new BinaryTreeNode(2));
-    root.rightNode.rightNode.rightNode.leftNode.setLeftNode(new BinaryTreeNode(2));
-    root.rightNode.rightNode.rightNode.leftNode.setRightNode(new BinaryTreeNode(12));
+    root.setLeft(new BinaryTreeNode(3));
+    root.left.setLeft(new BinaryTreeNode(4));
+    root.left.left.setLeft(new BinaryTreeNode(5));
+    root.left.left.left.setLeft(new BinaryTreeNode(10));
+    root.left.left.left.setRight(new BinaryTreeNode(3));
+    root.left.left.left.right.setLeft(new BinaryTreeNode(2));
+    root.left.left.setRight(new BinaryTreeNode(2));
+    root.left.left.right.setLeft(new BinaryTreeNode(6));
+    root.left.left.right.setRight(new BinaryTreeNode(3));
+    root.left.setRight(new BinaryTreeNode(7));
+    root.setRight(new BinaryTreeNode(5));
+    root.right.setLeft(new BinaryTreeNode(3));
+    root.right.setRight(new BinaryTreeNode(2));
+    root.right.left.setLeft(new BinaryTreeNode(4));
+    root.right.left.setRight(new BinaryTreeNode(6));
+    root.right.right.setLeft(new BinaryTreeNode(8));
+    root.right.right.setRight(new BinaryTreeNode(5));
+    root.right.right.right.setRight(new BinaryTreeNode(2));
+    root.right.right.right.setLeft(new BinaryTreeNode(2));
+    root.right.right.right.left.setLeft(new BinaryTreeNode(2));
+    root.right.right.right.left.setRight(new BinaryTreeNode(12));
   }
 }

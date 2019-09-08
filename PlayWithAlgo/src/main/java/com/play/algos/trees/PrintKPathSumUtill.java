@@ -20,52 +20,52 @@ public class PrintKPathSumUtill {
   private static void createSampleTree2() {
     root = new BinaryTreeNode();
     root.setData(1);
-    root.setLeftNode(new BinaryTreeNode());
-    root.leftNode.setData(3);
-    root.leftNode.setLeftNode(new BinaryTreeNode());
-    root.leftNode.leftNode.setData(2);
-    root.leftNode.setRightNode(new BinaryTreeNode());
-    root.leftNode.rightNode.setData(1);
-    root.leftNode.rightNode.setLeftNode(new BinaryTreeNode());
-    root.leftNode.rightNode.leftNode.setData(1);
+    root.setLeft(new BinaryTreeNode());
+    root.left.setData(3);
+    root.left.setLeft(new BinaryTreeNode());
+    root.left.left.setData(2);
+    root.left.setRight(new BinaryTreeNode());
+    root.left.right.setData(1);
+    root.left.right.setLeft(new BinaryTreeNode());
+    root.left.right.left.setData(1);
 
-    root.setRightNode(new BinaryTreeNode());
-    root.rightNode.setData(-1);
-    root.rightNode.setLeftNode(new BinaryTreeNode());
-    root.rightNode.leftNode.setData(4);
-    root.rightNode.leftNode.setLeftNode(new BinaryTreeNode());
-    root.rightNode.leftNode.leftNode.setData(1);
-    root.rightNode.leftNode.setRightNode(new BinaryTreeNode());
-    root.rightNode.leftNode.rightNode.setData(2);
-    root.rightNode.setRightNode(new BinaryTreeNode());
-    root.rightNode.rightNode.setData(5);
-    root.rightNode.rightNode.setRightNode(new BinaryTreeNode());
-    root.rightNode.rightNode.rightNode.setData(6);
+    root.setRight(new BinaryTreeNode());
+    root.right.setData(-1);
+    root.right.setLeft(new BinaryTreeNode());
+    root.right.left.setData(4);
+    root.right.left.setLeft(new BinaryTreeNode());
+    root.right.left.left.setData(1);
+    root.right.left.setRight(new BinaryTreeNode());
+    root.right.left.right.setData(2);
+    root.right.setRight(new BinaryTreeNode());
+    root.right.right.setData(5);
+    root.right.right.setRight(new BinaryTreeNode());
+    root.right.right.right.setData(6);
   }
 
   private static void createSampleTree() {
     root = new BinaryTreeNode();
     root.setData(1);
-    root.setLeftNode(new BinaryTreeNode());
-    root.leftNode.setData(2);
-    root.leftNode.setLeftNode(new BinaryTreeNode());
-    root.leftNode.leftNode.setData(3);
-    root.leftNode.leftNode.setLeftNode(new BinaryTreeNode());
-    root.leftNode.leftNode.leftNode.setData(4);
-    root.leftNode.leftNode.setRightNode(new BinaryTreeNode());
-    root.leftNode.leftNode.rightNode.setData(5);
-    root.leftNode.setRightNode(new BinaryTreeNode());
-    root.leftNode.rightNode.setData(6);
-    root.leftNode.rightNode.setRightNode(new BinaryTreeNode());
-    root.leftNode.rightNode.rightNode.setData(7);
-    root.leftNode.rightNode.rightNode.setLeftNode(new BinaryTreeNode());
-    root.leftNode.rightNode.rightNode.leftNode.setData(8);
-    root.setRightNode(new BinaryTreeNode());
-    root.rightNode.setData(9);
-    root.rightNode.setLeftNode(new BinaryTreeNode());
-    root.rightNode.leftNode.setData(10);
-    root.rightNode.setRightNode(new BinaryTreeNode());
-    root.rightNode.rightNode.setData(11);
+    root.setLeft(new BinaryTreeNode());
+    root.left.setData(2);
+    root.left.setLeft(new BinaryTreeNode());
+    root.left.left.setData(3);
+    root.left.left.setLeft(new BinaryTreeNode());
+    root.left.left.left.setData(4);
+    root.left.left.setRight(new BinaryTreeNode());
+    root.left.left.right.setData(5);
+    root.left.setRight(new BinaryTreeNode());
+    root.left.right.setData(6);
+    root.left.right.setRight(new BinaryTreeNode());
+    root.left.right.right.setData(7);
+    root.left.right.right.setLeft(new BinaryTreeNode());
+    root.left.right.right.left.setData(8);
+    root.setRight(new BinaryTreeNode());
+    root.right.setData(9);
+    root.right.setLeft(new BinaryTreeNode());
+    root.right.left.setData(10);
+    root.right.setRight(new BinaryTreeNode());
+    root.right.right.setData(11);
   }
 
   static void findSum(Integer originalSum, Integer sum,
@@ -83,11 +83,11 @@ public class PrintKPathSumUtill {
     }
 
     // as the BT may contain negative values we have to iterate it all
-    findSum(originalSum, originalSum, result, new ArrayList(), node.rightNode);
-    findSum(originalSum, originalSum, result, new ArrayList(), node.leftNode);
+    findSum(originalSum, originalSum, result, new ArrayList(), node.right);
+    findSum(originalSum, originalSum, result, new ArrayList(), node.left);
     int remaining = sum - nodeValue;
-    findSum(originalSum, remaining, result, new ArrayList(currentList), node.rightNode);
-    findSum(originalSum, remaining, result, new ArrayList(currentList), node.leftNode);
+    findSum(originalSum, remaining, result, new ArrayList(currentList), node.right);
+    findSum(originalSum, remaining, result, new ArrayList(currentList), node.left);
   }
 
   static void findSum(Integer sum) {

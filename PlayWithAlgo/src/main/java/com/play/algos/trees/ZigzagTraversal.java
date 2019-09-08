@@ -15,23 +15,23 @@ public class ZigzagTraversal {
   private static void createSampleTree() {
 
     root = new BinaryTreeNode(5);
-    root.setLeftNode(new BinaryTreeNode(3));
-    root.leftNode.setLeftNode(new BinaryTreeNode(4));
-    root.leftNode.leftNode.setLeftNode(new BinaryTreeNode(5));
-    root.leftNode.leftNode.leftNode.setLeftNode(new BinaryTreeNode(1));
-    root.leftNode.leftNode.leftNode.setRightNode(new BinaryTreeNode(3));
-    root.leftNode.leftNode.leftNode.rightNode.setLeftNode(new BinaryTreeNode(1));
-    root.leftNode.leftNode.setRightNode(new BinaryTreeNode(2));
-    root.leftNode.leftNode.rightNode.setLeftNode(new BinaryTreeNode(6));
-    root.leftNode.leftNode.rightNode.setRightNode(new BinaryTreeNode(3));
-    root.leftNode.setRightNode(new BinaryTreeNode(1));
-    root.setRightNode(new BinaryTreeNode(5));
-    root.rightNode.setLeftNode(new BinaryTreeNode(3));
-    root.rightNode.setRightNode(new BinaryTreeNode(2));
-    root.rightNode.leftNode.setLeftNode(new BinaryTreeNode(4));
-    root.rightNode.leftNode.setRightNode(new BinaryTreeNode(6));
-    root.rightNode.rightNode.setLeftNode(new BinaryTreeNode(8));
-    root.rightNode.rightNode.setRightNode(new BinaryTreeNode(5));
+    root.setLeft(new BinaryTreeNode(3));
+    root.left.setLeft(new BinaryTreeNode(4));
+    root.left.left.setLeft(new BinaryTreeNode(5));
+    root.left.left.left.setLeft(new BinaryTreeNode(1));
+    root.left.left.left.setRight(new BinaryTreeNode(3));
+    root.left.left.left.right.setLeft(new BinaryTreeNode(1));
+    root.left.left.setRight(new BinaryTreeNode(2));
+    root.left.left.right.setLeft(new BinaryTreeNode(6));
+    root.left.left.right.setRight(new BinaryTreeNode(3));
+    root.left.setRight(new BinaryTreeNode(1));
+    root.setRight(new BinaryTreeNode(5));
+    root.right.setLeft(new BinaryTreeNode(3));
+    root.right.setRight(new BinaryTreeNode(2));
+    root.right.left.setLeft(new BinaryTreeNode(4));
+    root.right.left.setRight(new BinaryTreeNode(6));
+    root.right.right.setLeft(new BinaryTreeNode(8));
+    root.right.right.setRight(new BinaryTreeNode(5));
   }
 
   public static ArrayList<ArrayList<Integer>> zigzagLevelOrder(BinaryTreeNode A) {
@@ -48,12 +48,12 @@ public class ZigzagTraversal {
         while (!rightToLeft.isEmpty()) {
           BinaryTreeNode node = rightToLeft.pop();
           list.add(node.data);
-          if (node.leftNode != null) {
-            leftToRight.push(node.leftNode);
+          if (node.left != null) {
+            leftToRight.push(node.left);
           }
 
-          if (node.rightNode != null) {
-            leftToRight.push(node.rightNode);
+          if (node.right != null) {
+            leftToRight.push(node.right);
           }
         }
         result.add(list);
@@ -65,12 +65,12 @@ public class ZigzagTraversal {
         while (!leftToRight.isEmpty()) {
           BinaryTreeNode node = leftToRight.pop();
           list2.add(node.data);
-          if (node.rightNode != null) {
-            rightToLeft.push(node.rightNode);
+          if (node.right != null) {
+            rightToLeft.push(node.right);
           }
 
-          if (node.leftNode != null) {
-            rightToLeft.push(node.leftNode);
+          if (node.left != null) {
+            rightToLeft.push(node.left);
           }
         }
         result.add(list2);

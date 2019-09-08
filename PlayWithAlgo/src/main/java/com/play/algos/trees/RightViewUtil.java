@@ -20,33 +20,33 @@ public class RightViewUtil {
       maxLevel = currentLevel;
       System.out.println(node.data);
     }
-    printRightView(node.rightNode, currentLevel + 1);
-    printRightView(node.leftNode, currentLevel + 1);
+    printRightView(node.right, currentLevel + 1);
+    printRightView(node.left, currentLevel + 1);
 
   }
 
   private static void createSampleTree() {
     root = new BinaryTreeNode();
     root.setData(1);
-    root.setLeftNode(new BinaryTreeNode());
-    root.leftNode.setData(2);
-    root.leftNode.setLeftNode(new BinaryTreeNode());
-    root.leftNode.leftNode.setData(3);
-    root.leftNode.leftNode.setLeftNode(new BinaryTreeNode());
-    root.leftNode.leftNode.leftNode.setData(4);
-    root.leftNode.leftNode.setRightNode(new BinaryTreeNode());
-    root.leftNode.leftNode.rightNode.setData(5);
-    root.leftNode.setRightNode(new BinaryTreeNode());
-    root.leftNode.rightNode.setData(6);
-    root.leftNode.rightNode.setRightNode(new BinaryTreeNode());
-    root.leftNode.rightNode.rightNode.setData(7);
-    root.leftNode.rightNode.rightNode.setLeftNode(new BinaryTreeNode());
-    root.leftNode.rightNode.rightNode.leftNode.setData(8);
-    root.setRightNode(new BinaryTreeNode());
-    root.rightNode.setData(9);
-    root.rightNode.setLeftNode(new BinaryTreeNode());
-    root.rightNode.leftNode.setData(10);
-    root.rightNode.setRightNode(new BinaryTreeNode());
-    root.rightNode.rightNode.setData(11);
+    root.setLeft(new BinaryTreeNode());
+    root.left.setData(2);
+    root.left.setLeft(new BinaryTreeNode());
+    root.left.left.setData(3);
+    root.left.left.setLeft(new BinaryTreeNode());
+    root.left.left.left.setData(4);
+    root.left.left.setRight(new BinaryTreeNode());
+    root.left.left.right.setData(5);
+    root.left.setRight(new BinaryTreeNode());
+    root.left.right.setData(6);
+    root.left.right.setRight(new BinaryTreeNode());
+    root.left.right.right.setData(7);
+    root.left.right.right.setLeft(new BinaryTreeNode());
+    root.left.right.right.left.setData(8);
+    root.setRight(new BinaryTreeNode());
+    root.right.setData(9);
+    root.right.setLeft(new BinaryTreeNode());
+    root.right.left.setData(10);
+    root.right.setRight(new BinaryTreeNode());
+    root.right.right.setData(11);
   }
 }

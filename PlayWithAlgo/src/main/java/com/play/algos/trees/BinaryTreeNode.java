@@ -6,11 +6,11 @@ import lombok.ToString;
 
 @Getter
 @Setter
-@ToString
+
 public class BinaryTreeNode {
-  int data;
-  BinaryTreeNode leftNode;
-  BinaryTreeNode rightNode;
+  public int data;
+  public BinaryTreeNode left;
+  public BinaryTreeNode right;
 
   BinaryTreeNode(int data) {
     this.data = data;
@@ -21,9 +21,9 @@ public class BinaryTreeNode {
 
   public void inOrderTraversal(final BinaryTreeNode node) {
     if (node != null) {
-      inOrderTraversal(node.leftNode);
+      inOrderTraversal(node.left);
       System.out.print(node.data + " ");
-      inOrderTraversal(node.rightNode);
+      inOrderTraversal(node.right);
     }
   }
 }

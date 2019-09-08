@@ -30,7 +30,7 @@ public class BSTCorrectSwappedNotes {
 
   private static void findNodes(final BinaryTreeNode node) {
     if (node != null) {
-      findNodes(node.leftNode);
+      findNodes(node.left);
       if (previousNode != null && previousNode.data > node.data) {
         if (firstNode == null) {
           firstNode = previousNode;
@@ -41,18 +41,18 @@ public class BSTCorrectSwappedNotes {
 
       }
       previousNode = node;
-      findNodes(node.rightNode);
+      findNodes(node.right);
     }
   }
 
   private static void createSampleTree() {
     root = new BinaryTreeNode(6);
-    root.leftNode = new BinaryTreeNode(10);
-    root.rightNode = new BinaryTreeNode(2);
-    root.leftNode.leftNode = new BinaryTreeNode(1);
-    root.leftNode.rightNode = new BinaryTreeNode(3);
-    root.rightNode.rightNode = new BinaryTreeNode(12);
-    root.rightNode.leftNode = new BinaryTreeNode(7);
+    root.left = new BinaryTreeNode(10);
+    root.right = new BinaryTreeNode(2);
+    root.left.left = new BinaryTreeNode(1);
+    root.left.right = new BinaryTreeNode(3);
+    root.right.right = new BinaryTreeNode(12);
+    root.right.left = new BinaryTreeNode(7);
 
   }
 }

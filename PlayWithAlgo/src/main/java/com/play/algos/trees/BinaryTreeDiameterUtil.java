@@ -15,29 +15,29 @@ public class BinaryTreeDiameterUtil {
   private static void createSampleTree() {
     root = new BinaryTreeNode();
     root.setData(1);
-    root.setLeftNode(new BinaryTreeNode());
-    root.leftNode.setData(2);
-    root.leftNode.setLeftNode(new BinaryTreeNode());
-    root.leftNode.leftNode.setData(3);
-    root.leftNode.leftNode.setLeftNode(new BinaryTreeNode());
-    root.leftNode.leftNode.setRightNode(new BinaryTreeNode());
-    root.leftNode.leftNode.rightNode.setLeftNode(new BinaryTreeNode());
-    root.leftNode.leftNode.rightNode.leftNode.setLeftNode(new BinaryTreeNode());
-    root.leftNode.setRightNode(new BinaryTreeNode());
-    root.leftNode.rightNode.setData(4);
-    root.leftNode.rightNode.setRightNode(new BinaryTreeNode());
-    root.leftNode.rightNode.rightNode.setData(5);
-    root.leftNode.rightNode.rightNode.setLeftNode(new BinaryTreeNode());
-    root.leftNode.rightNode.rightNode.leftNode.setData(6);
-    root.leftNode.rightNode.rightNode.setRightNode(new BinaryTreeNode());
-    root.leftNode.rightNode.rightNode.rightNode.setRightNode(new BinaryTreeNode());
-    root.leftNode.rightNode.rightNode.setLeftNode(new BinaryTreeNode());
-    root.setRightNode(new BinaryTreeNode());
-    root.rightNode.setData(7);
-    root.rightNode.setLeftNode(new BinaryTreeNode());
-    root.rightNode.leftNode.setData(8);
-    root.rightNode.setRightNode(new BinaryTreeNode());
-    root.rightNode.rightNode.setData(9);
+    root.setLeft(new BinaryTreeNode());
+    root.left.setData(2);
+    root.left.setLeft(new BinaryTreeNode());
+    root.left.left.setData(3);
+    root.left.left.setLeft(new BinaryTreeNode());
+    root.left.left.setRight(new BinaryTreeNode());
+    root.left.left.right.setLeft(new BinaryTreeNode());
+    root.left.left.right.left.setLeft(new BinaryTreeNode());
+    root.left.setRight(new BinaryTreeNode());
+    root.left.right.setData(4);
+    root.left.right.setRight(new BinaryTreeNode());
+    root.left.right.right.setData(5);
+    root.left.right.right.setLeft(new BinaryTreeNode());
+    root.left.right.right.left.setData(6);
+    root.left.right.right.setRight(new BinaryTreeNode());
+    root.left.right.right.right.setRight(new BinaryTreeNode());
+    root.left.right.right.setLeft(new BinaryTreeNode());
+    root.setRight(new BinaryTreeNode());
+    root.right.setData(7);
+    root.right.setLeft(new BinaryTreeNode());
+    root.right.left.setData(8);
+    root.right.setRight(new BinaryTreeNode());
+    root.right.right.setData(9);
   }
 
   private static int calculateHeight(BinaryTreeNode node, int height) {
@@ -45,16 +45,16 @@ public class BinaryTreeDiameterUtil {
       return height;
     }
     height++;
-    return Math.max(calculateHeight(node.leftNode, height),
-        calculateHeight(node.rightNode, height));
+    return Math.max(calculateHeight(node.left, height),
+        calculateHeight(node.right, height));
   }
 
   private static int diameterOfATree(BinaryTreeNode node) {
     if (node == null) {
       return 0;
     }
-    int leftDiameter = diameterOfATree(node.leftNode);
-    int rightDiameter = diameterOfATree(node.rightNode);
+    int leftDiameter = diameterOfATree(node.left);
+    int rightDiameter = diameterOfATree(node.right);
     if (diameter < (leftDiameter+ rightDiameter)+1) {
       diameter = (leftDiameter+ rightDiameter) +1;
     }
